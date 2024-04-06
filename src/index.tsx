@@ -5,8 +5,8 @@ import './styles.css';
 import 'dockview/dist/styles/dockview.css';
 import './sidebar.css';
 
-import Sidebar from './Sidebar';
-import App from './app';
+import Sidebar from './sidebar';
+import Panels from './panels';
 
 const rootElement = document.getElementById('root');
 
@@ -20,7 +20,7 @@ if (rootElement) {
                 <Sidebar />
 
                 <div className="app-container">
-                    <App />
+                    <Panels />
                 </div>
             </div>
         </StrictMode>

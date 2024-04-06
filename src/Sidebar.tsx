@@ -1,15 +1,23 @@
 // import Link from 'next/link';
 import './sidebar.css';
 
-const Sidebar = () => {
+interface SidebarProps {
+    onIconClick: (panelId: string) => void;
+}
+
+const Sidebar = ({ onIconClick }: SidebarProps) => {
+    const handleIconClick = (panelId: string) => {
+        onIconClick(panelId);
+    };
+
     return (
         <div className="sidebar-container">
             <div className="iconContainer" data-tooltip="Graph window">
                 <img width="40" height="40" src="https://img.icons8.com/ios/50/1A1A1A/share-2--v1.png" alt="share-2--v1" className="sidebarImg" />
                 <div className="dropdown">
-                    <button className="dropdownButton">ICD10</button>
-                    <button className="dropdownButton">CPT4</button>
-                    <button className="dropdownButton">GPI</button>
+                    <button className="dropdownButton" onClick={() => handleIconClick('ICD10')}>ICD10</button>
+                    <button className="dropdownButton" onClick={() => handleIconClick('CPT4')}>CPT4</button>
+                    <button className="dropdownButton" onClick={() => handleIconClick('GPI')}>GPI</button>
                 </div>
             </div>
 
