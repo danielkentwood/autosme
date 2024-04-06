@@ -1,0 +1,94 @@
+.sidebar-container {
+    display: flex;
+    flex-direction: column; /*test*/
+    flex: 0 0 72px; /* Adjust the width as needed */
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background: #eee;
+    padding: 12px;
+    border-right: 1px solid black;
+    align-items: center; /*test*/
+    justify-content: space-between; /*test*/
+    font-size: 10px;
+  }
+  
+  .iconContainer {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .dropdown {
+    display: none;
+    position: absolute;
+    left: 100%;
+    top: -5px;
+    background-color: #f9f9f9;
+    min-width: 80px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    transform: translateY(30%) translateX(15%);
+  }
+  
+  .iconContainer img {
+    background: transparent;
+    border-radius: 10px;
+    filter: invert(0%);
+  }
+  
+  .iconContainer img:hover {
+    background: #ddd;
+    filter: invert(100%);
+  }
+  
+  .iconContainer::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    left: calc(100% + 5px);
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #333;
+    color: #fff;
+    padding: 5px;
+    border-radius: 4px;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+    z-index: 9999;
+  }
+  
+  .iconContainer:hover::after {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .iconContainer:hover .dropdown {
+    display: block;
+  }
+  
+  .homeIcon {
+    margin-top: auto;
+    padding-bottom: 5px;
+  }
+  
+  .dropdownButton {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    border: none;
+    background-color: transparent;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+  }
+  
+  .dropdownButton:hover {
+    background-color: #f1f1f1;
+    color: #000;
+  }
